@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mitarbeiterbilderportal</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="expires" content="0">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<main class="gridcontainer">
+		
+			<section id="griditem1" class="griddesign">		
+				<header id="topheader">
+					  <h1>Mitarbeiterbilderportal</h1>
+				</header>
+
+				<p class="featureheading">Mitarbeiter suchen:</p>
+				<form method="post" action="search.php" id="searchForm">
+					<label for="search"></label>
+					<input type="search" id="search" name="search" placeholder="Mitarbeitername eingeben" required>				
+					<button type="submit" id="searcher" class="button">Suchen</button>
+					<p id="searchfailmessage"></p>
+				</form>
+				<p id="test"></p>
+			</section>	<!-- end griditem1 -->		
+			
+			<section id="griditem2" class="griddesign hide">
+				<picture >
+				  <img id="employeepicture" src="" alt="">
+				</picture> 
+			</section>	<!-- end griditem2 -->
+			
+			<section id="griditem3" class="griddesign hide">
+				<ul id="employeeinfo">
+			        <li><label for="employeeid_output">ID:</label><p id="employeeid_output"></p></li>
+					<li><label for="employeename_output">Name:</label><p id="employeename_output"></p></li>
+					<li><label for="employeeposition_output">Position:</label><p id="employeeposition_output"></p></li>
+					<li><label for="workplace_output">Arbeitsplatz:</label><p id="workplace_output"></p></li> 
+				</ul>
+			</section> <!-- end griditem3 -->
+			<section id="griditem4" class="griddesign">
+				<p class="featureheading">Mitarbeiterbild hinzufügen:</p>
+				<form method="post" action="addemployeeinfos.php" id="addpictureForm">
+					<label for="employeefirstname_input"><input type="text" id="employeefirstname_input" name="employeefirstname_input" placeholder="Vorname:" required><br></label>
+					<label for="employeesurname_input"><input type="text" id="employeesurname_input" name="employeesurname_input" placeholder="Nachname:" required><br></label>				
+					<label for="employeeposition_input"><input type="text" id="employeeposition_input" name="employeeposition_input" placeholder="Position:" required><br></label>
+					<label for="workplace_input"><input type="text" id="workplace_input" name="workplace_input" placeholder="Arbeitsplatz:" required><br></label>
+				</form>
+			</section> <!-- end griditem4 -->	
+			<section id="griditem5" class="griddesign">
+			<!-- https://www.ab-heute-programmieren.de/drag-and-drop-upload-mit-html5/ -->
+				<div id="uploadzone">
+					<p id="uploadzonetext">Ziehen Sie das Mitarbeiterbild hier herein (erlaubte Dateiformate: jpg, jpeg, png, bmp / max. 15MB):</p>
+					<p id="filetypefailtext"></p>
+				</div>
+				<span id="progress">Aktueller Fortschritt: 0%</span>
+			</section> <!-- end griditem5 -->			
+			<section id="griditem6" class="griddesign">	
+				<button type="submit" form="addpictureForm" id="pictureadderbutton" class="disabledbutton" disabled="true">Bild hinzufügen</button>
+				<p id="uploadmessage"></p>
+			</section>  <!-- end griditem6 -->
+		</main>
+	</body>
+</html> 

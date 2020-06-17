@@ -17,14 +17,15 @@ catch (PDOException $e) {
 $firstname = !empty($_POST["employeefirstname_input"]) ? ($_POST["employeefirstname_input"]) : FALSE;
 $surname = !empty($_POST["employeesurname_input"]) ? ($_POST["employeesurname_input"]) : FALSE;
 $position = !empty($_POST["employeeposition_input"]) ? ($_POST["employeeposition_input"]) : FALSE;
-$workplace = !empty($_POST["workplace_input"]) ? ($_POST["workplace_input"]) : FALSE;
+$building = !empty($_POST["building_input"]) ? ($_POST["building_input"]) : FALSE;
+$room = !empty($_POST["room_input"]) ? ($_POST["room_input"]) : FALSE;
 $highestUserID = $dbh->query("SELECT userid FROM $dbtable ORDER BY userid DESC LIMIT 1")->fetch();
 $userid = $highestUserID['userid'] + 1;
 $filename = $_COOKIE["filenameCookie"]; //dieser Cookie wird in der addpicture.php gesetzt und enthält den Dateinamen des hochgeladenen Bildes
 
-$stmt = $dbh->prepare("INSERT INTO $dbtable (userid, vorname, nachname, position, arbeitsplatz, bilddateiname) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt = $dbh->prepare("INSERT INTO $dbtable (userid, vorname, nachname, position, gebaeude, raum, bilddateiname) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-$stmt->execute(array($userid, $firstname, $surname, $position,$workplace ,$filename));
+$stmt->execute(array($userid, $firstname, $surname, $position, $building, $room, $filename));
 
 $msg = "Bild erfolgreich hochgeladen";
 $msg = json_encode($msg);

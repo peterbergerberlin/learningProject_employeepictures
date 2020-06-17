@@ -63,7 +63,7 @@ function showMessageSearchForm(msg) {
 	document.getElementById("employeeid_output").innerText = msg[0].userid;
 	document.getElementById("employeename_output").innerText = msg[0].vorname + " " + msg[0].nachname;
 	document.getElementById("employeeposition_output").innerText = msg[0].position;
-	document.getElementById("workplace_output").innerText = msg[0].arbeitsplatz;
+	document.getElementById("workplace_output").innerText = msg[0].gebaeude + ", " + msg[0].raum;
 	document.getElementById("employeepicture").setAttribute("src","img/"+msg[0].bilddateiname);
 }
 
